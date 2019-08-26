@@ -1,9 +1,9 @@
 #!/bin/sh
 #NODEJS REMOTE SERVER IP
-ssh rick@192.168.1.7 <<EOF
+ssh -T rick@192.168.1.7 << EOSSH
  cd ~/nodejs-jenkins-CI-CD
  git pull
  npm install --production
  pm2 restart all
  exit
-EOF
+EOSSH
