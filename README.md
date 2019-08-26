@@ -1,2 +1,6 @@
 # node-jenkins-CI-CD
-## hello
+##
+Pipeline que permite probar el ciclo de CI/CD para 
+una simple aplicacion en nodejs
+
+
