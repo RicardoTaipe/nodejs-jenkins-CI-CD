@@ -1,20 +1,26 @@
 pipeline {
     agent any
+
     stages {
-        stage('Example') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Building..'
             }
-            post{
-                success{
-                    echo 'I will be executed after SUCCED'
-                }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
     post { 
         always { 
-            echo 'I will always say Hello again!'
-        }
+        echo 'I will always say Hello again!'
     }
+}
 }
