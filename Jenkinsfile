@@ -14,13 +14,13 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sh './scripts/deploy'
             }
         }
     }
     post { 
         always { 
-        echo 'I will always say Hello again!'
+        echo 'CI CD successful!'
     }
 }
 }
