@@ -19,12 +19,10 @@ pipeline {
         }
     }
     post { 
-        always { 
-        steps {
-                slackSend channel: '#jenkins-ci-cd',
-                    color: 'good',
-                    message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
+        success {
+            slackSend channel: '#jenkins-ci-cd',
+            color: 'good',
+            message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
             }
     }
-}
 }
